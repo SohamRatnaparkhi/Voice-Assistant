@@ -11,7 +11,7 @@ import datetime
 python = pyttsx3.init("sapi5")
 voices = python.getProperty("voice")
 python.setProperty("voice", voices[0])
-
+python.setProperty("rate", 125)
 
 
 
@@ -26,6 +26,12 @@ def speak(text):
     python.runAndWait()
 
 def greet(g):
+    """Greet the user while starting or when the program ends
+
+    Args:
+        g ([str]): [s - start
+                    e - end  ]
+    """
     if g == "start" or g == "s":
         h = datetime.datetime.now().hour
         text = ''
@@ -46,7 +52,7 @@ def hear():
     """[It will process the speech of user using Google_Speech_Recognizer(recognize_google)]
 
     Returns:
-        [str]: [Speech of user as a string in English(en - IN)]
+        [str]: [Speech of user as a string in English(en - US)]
     """    
     r = sr.Recognizer()
     """Reconizer is a class which has lot of functions related to Speech i/p and o/p.
@@ -58,7 +64,7 @@ def hear():
         """
         print("Listening...")
         r.pause_threshold = 1 # a pause of more than 1 second will stop the microphone temporarily
-        r.energy_threshold = 250 # python by default sets it to 300. It is the minimum input energy to be considered. 
+        r.energy_threshold = 300 # python by default sets it to 300. It is the minimum input energy to be considered. 
         r.dynamic_energy_threshold = True # pyhton now can dynamically change the threshold energy
         speech = r.listen(source)
         
@@ -85,4 +91,5 @@ if __name__ == '__main__':
     #greet("e")
     '''
     hear()
+    
     
