@@ -8,11 +8,11 @@ import os
 import pyttsx3
 import datetime
 
-python = pyttsx3.init("sapi5")
-voices = python.getProperty("voice")
-python.setProperty("voice", voices[0])
-python.setProperty("rate", 125)
-
+# TODO: Initialize the speech engine by the name 'python'.
+python = pyttsx3.init("sapi5")  # Using Microsoft's Sapi5 API
+voices = python.getProperty("voice") # Extracting the voices of David and Zira
+python.setProperty("voice", voices[0]) # Using David's voice
+python.setProperty("rate", 125) # Setting the rate to 125 after various experiments. (Default value is 150)
 
 
 
@@ -55,11 +55,11 @@ def hear():
         [str]: [Speech of user as a string in English(en - US)]
     """    
     r = sr.Recognizer()
-    """Reconizer is a class which has lot of functions related to Speech i/p and o/p.
-    """
+    #Reconizer is a class which has lot of functions related to Speech i/p and o/p.
+    
     with sr.Microphone() as source:
         """Microphone is class that can be used to access pyaudio and related functions.
-            When the user speaks something, the user's voice will be the 'source'.
+            When the user speaks something in the microphone of user device, the user's voice will be the 'source'.
             Source will be interpreted by Python using the 'listen' function of Recognizer class
         """
         print("Listening...")
@@ -70,6 +70,8 @@ def hear():
         
 
     try:
+        """[Using Google's TTS engine to recognize user's voice.]
+        """        
         print("Recognizing...")
         speech = r.recognize_google(speech)
         print(speech)
@@ -78,7 +80,7 @@ def hear():
         print(exception)
         print("Failed to recognize... Please say that again!")
         speak("Failed to recognize.Please say that again!")
-        hear()
+        #hear()
         return "None"
     return speech
 

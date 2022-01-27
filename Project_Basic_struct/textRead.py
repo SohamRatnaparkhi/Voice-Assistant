@@ -3,13 +3,14 @@ import textract
 import docx
 
 def ms_word():
-    filename = ""
-    doc = docx.Document("D:\College\Air Pollution.docx")
+    file_loc = "D:\College\Air Pollution.docx"
+    doc = docx.Document(file_loc)
     fullText = []
     for para in doc.paragraphs:
         fullText.append(para.text)
-    content = '\n'.join(fullText)
-    print(content)
-    speak(content)
+    #print(fullText)
+    doc_file = '\n'.join(fullText)
+    print(doc_file)
+    speak(doc_file)
 
 ms_word()
