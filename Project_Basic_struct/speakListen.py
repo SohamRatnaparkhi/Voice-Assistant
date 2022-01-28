@@ -1,4 +1,6 @@
+import time
 from turtle import delay
+from anyio import sleep
 import speech_recognition as sr
 '''from gtts import gTTS
 from playsound import playsound
@@ -8,12 +10,11 @@ import os
 import pyttsx3
 import datetime
 
-# TODO: Initialize the speech engine by the name 'python'.
-python = pyttsx3.init("sapi5")  # Using Microsoft's Sapi5 API
-voices = python.getProperty("voice") # Extracting the voices of David and Zira
-python.setProperty("voice", voices[0]) # Using David's voice
-python.setProperty("rate", 125) # Setting the rate to 125 after various experiments. (Default value is 150)
-
+python = pyttsx3.init("sapi5")
+voices = python.getProperty("voices")
+#print(voices)
+python.setProperty("voice", voices[1].id)
+python.setProperty("rate", 140)
 
 
 def speak(text):
@@ -26,12 +27,6 @@ def speak(text):
     python.runAndWait()
 
 def greet(g):
-    """Greet the user while starting or when the program ends
-
-    Args:
-        g ([str]): [s - start
-                    e - end  ]
-    """
     if g == "start" or g == "s":
         h = datetime.datetime.now().hour
         text = ''
@@ -52,46 +47,43 @@ def hear():
     """[It will process the speech of user using Google_Speech_Recognizer(recognize_google)]
 
     Returns:
-        [str]: [Speech of user as a string in English(en - US)]
+        [str]: [Speech of user as a string in English(en - IN)]
     """    
     r = sr.Recognizer()
-    #Reconizer is a class which has lot of functions related to Speech i/p and o/p.
-    
-    with sr.Microphone() as source:
-        """Microphone is class that can be used to access pyaudio and related functions.
-            When the user speaks something in the microphone of user device, the user's voice will be the 'source'.
-            Source will be interpreted by Python using the 'listen' function of Recognizer class
-        """
-        print("Listening...")
-        r.pause_threshold = 1 # a pause of more than 1 second will stop the microphone temporarily
-        r.energy_threshold = 300 # python by default sets it to 300. It is the minimum input energy to be considered. 
-        r.dynamic_energy_threshold = True # pyhton now can dynamically change the threshold energy
-        speech = r.listen(source)
-        
+    """Reconizer is a class which has lot of functions related to Speech i/p and o/p.
+    """
+    r.pause_threshold = 1 # a pause of more than 1 second will stop the microphone temporarily
+    r.energy_threshold = 300 # python by default sets it to 300. It is the minimum input energy to be considered. 
+    r.dynamic_energy_threshold = True # pyhton now can dynamically change the threshold energy
 
-    try:
-        """[Using Google's TTS engine to recognize user's voice.]
-        """        
-        print("Recognizing...")
-        speech = r.recognize_google(speech)
-        print(speech)
+    with sr.Microphone() as source:
+        # read the audio data from the default microphone
+        print("Listening...")
+        time.sleep(0.5)
+
+        speech = r.record(source, duration = 5)  # option 
+        #speech = r.listen(source)
+        # convert speech to text
+        try:
+            print("Recognizing...")
+            speech = r.recognize_google(speech)
+            print(speech)
         
-    except Exception as exception:
-        print(exception)
-        print("Failed to recognize... Please say that again!")
-        speak("Failed to recognize.Please say that again!")
-        #hear()
-        return "None"
+        except Exception as exception:
+            print(exception)
+            print("Failed to recognize... Please say that again!")
+            speak("Failed to recognize.Please say that again!")
+            #hear()
+            return "None"
     return speech
 
 
 if __name__ == '__main__':
-    '''
-    name = input("Enter your name - ")
-    speak("Hello " + name)
-    greet("s")
-    #greet("e")
-    '''
-    hear()
     
+    #name = input("Enter your name - ")
+    #speak("Hello " + name)
+    #greet("s")
+    #greet("e")
+    pass
+    hear()
     

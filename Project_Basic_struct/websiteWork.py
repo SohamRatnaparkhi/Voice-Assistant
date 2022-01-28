@@ -1,6 +1,7 @@
 from speakListen import greet, hear
 from speakListen import speak
 
+
 """ 1. speakListen.speak(text)
     2. speakListen.greet()
     3. speakListen.hear()
@@ -33,7 +34,7 @@ def wiki_search():
 
     query = hear()
 
-    if query is not "None":
+    if query != "None":
         results = wikipedia.summary(query, sentences = 2)
         print(results)
         speak(results)
@@ -47,4 +48,4 @@ def wiki_search():
             webbrowser.open(wiki_search_link + query)
 
 #wiki_search()
-#google_search()
+google_search()
