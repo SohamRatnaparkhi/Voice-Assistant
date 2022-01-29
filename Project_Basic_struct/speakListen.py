@@ -73,8 +73,18 @@ def hear():
             print(exception)
             print("Failed to recognize... Please say that again!")
             speak("Failed to recognize.Please say that again!")
-            #hear()
-            return "None"
+            print("Listening...")
+            time.sleep(0.5)
+
+            speech = r.record(source, duration = 5)  # option
+            print("Recognizing...")
+            speech = r.recognize_google(speech)
+            print(speech) 
+            #return "None"
+            if len(speech) == 0:
+                return "None"
+            else:
+                return speech
     return speech
 
 
