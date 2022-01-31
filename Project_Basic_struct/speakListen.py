@@ -10,6 +10,7 @@ import os
 import pyttsx3
 import datetime
 
+
 python = pyttsx3.init("sapi5")
 voices = python.getProperty("voices")
 #print(voices)
@@ -59,7 +60,7 @@ def hear():
     with sr.Microphone() as source:
         # read the audio data from the default microphone
         print("Listening...")
-        time.sleep(0.5)
+        #time.sleep(0.5)
 
         speech = r.record(source, duration = 5)  # option 
         #speech = r.listen(source)
@@ -71,29 +72,16 @@ def hear():
         
         except Exception as exception:
             print(exception)
-            print("Failed to recognize... Please say that again!")
-            speak("Failed to recognize.Please say that again!")
-            print("Listening...")
-            time.sleep(0.5)
-
-            speech = r.record(source, duration = 5)  # option
-            print("Recognizing...")
-            speech = r.recognize_google(speech)
-            print(speech) 
-            #return "None"
-            if len(speech) == 0:
-                return "None"
-            else:
-                return speech
+            return "None"
     return speech
 
 
 if __name__ == '__main__':
-    
-    #name = input("Enter your name - ")
-    #speak("Hello " + name)
-    #greet("s")
-    #greet("e")
+    print("Enter your name")
+    name = hear()
+    speak("Hello " + name)
+    greet("s")
+    greet("e")
     pass
-    hear()
+    #hear()
     

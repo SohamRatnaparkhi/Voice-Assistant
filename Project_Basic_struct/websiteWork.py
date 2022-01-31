@@ -33,19 +33,22 @@ def wiki_search():
     speak(wiki_search)
 
     query = hear()
+    try:
 
-    if query != "None":
-        results = wikipedia.summary(query, sentences = 2)
-        print(results)
-        speak(results)
+        if query != "None":
+            results = wikipedia.summary(query, sentences = 2)
+            print(results)
+            speak(results)
 
-        print("Do you want me to open the Wikipedia page?")
-        speak("Do you want me to open the Wikipedia page?")
-        q = hear().lower()
+            print("Do you want me to open the Wikipedia page?")
+            speak("Do you want me to open the Wikipedia page?")
+            q = hear().lower()
 
-        if "yes" in q or "okay" in q or "okay" in q:
-            print(wiki_search_link + query)
-            webbrowser.open(wiki_search_link + query)
+            if "yes" in q or "okay" in q or "ok" in q or "opun" in q or "opan" in q or "vopen" in q or "es" in q or "s" in q:
+                print(wiki_search_link + query)
+                webbrowser.open(wiki_search_link + query)
+    except Exception as e:
+        pass
 
 #wiki_search()
 google_search()

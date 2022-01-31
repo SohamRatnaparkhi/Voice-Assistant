@@ -27,7 +27,7 @@ def pdf_read():
     """[Print and speak out the pdf on specified path]
     """    
 
-    path = doubleslash("D:\Books\\3Idiots.pdf")
+    path = doubleslash("D:\Books\\5 point Someone.pdf")
     pdf = fitz.open(path)
     details = pdf.metadata
     total_pages = pdf.pageCount # Stores the total number of pages
@@ -40,8 +40,8 @@ def pdf_read():
         author =  details["author"]
         title = details["title"]
         #print(details)
-        print(author)
-        print(title) 
+        print("Author : ",author)
+        print("Title : ",title) 
         print("Total Pages : ",total_pages)
 
         # TODO : Deal with the Index
@@ -67,7 +67,7 @@ def pdf_read():
         4. Read/speak a whole book
         """  
         
-        #time.sleep(30)
+        time.sleep(30)
   
         print("____________________________________________________________________________________________________________")
         print("1. Print/speak a single page\n2. Print/speak a range of pages\n3. Print/speak a Lesson\n4. Read/speak a whole book")
@@ -206,4 +206,4 @@ def search_in_toc(toc, key, totalpg):
     return None,None
 
 #ms_word()
-pdf_read()
+#pdf_read()
