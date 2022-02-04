@@ -11,8 +11,8 @@ import time
 def ms_word():
     """[Print and speak out a ms_word docx file as specified in the path]
     """    
-
-    file_loc = doubleslash("D:\College\Air Pollution.docx")
+    # TODO : Take location input from the user
+    file_loc = doubleslash("D:\College\Air Pollution.docx") 
 
     doc = docx.Document(file_loc)
     fullText = []
@@ -21,13 +21,13 @@ def ms_word():
     #print(fullText)
     doc_file = '\n'.join(fullText)
     print(doc_file)
-    #speak(doc_file)
+    speak(doc_file)
 
 def pdf_read():
     """[Print and speak out the pdf on specified path]
     """    
 
-    path = doubleslash("D:\Books\\5 point Someone.pdf")
+    path = doubleslash("D:\Books\\Friends.pdf")
     pdf = fitz.open(path)
     details = pdf.metadata
     total_pages = pdf.pageCount # Stores the total number of pages
@@ -38,7 +38,9 @@ def pdf_read():
                 4. Title  """   
 
         author =  details["author"]
+        speak(f" Author {author}")
         title = details["title"]
+        speak(f" Title {title}")    
         #print(details)
         print("Author : ",author)
         print("Title : ",title) 
@@ -46,12 +48,12 @@ def pdf_read():
 
         # TODO : Deal with the Index
         toc = pdf.get_toc()
-        print("Say 1 or only print index - if you want me to print the book's index.\nSay 2 if you want me to print and make me speak out the book's index.\nSay any key if you don't want to print the index.'")
+        print("Say 1 or \"ONLY PRINT INDEX\" - if you want me to print the book's index.\nSay 2 if you want me to print and make me speak out the book's index.\nSay any key if you don't want to print the index.'")
         speak("Say 1 or only print index if you want me to print the book's index.\nSay 2 if you want me to print and make me speak out the book's index.\nSay any key if you don't want to print the index.'")
         q = hear().lower()
-        if "only print" in q or "1" in q or "one" in q or "vone" in q or 'only' in q: 
+        if "only print" in q or "1" in q or "one" in q or "vone" in q or 'only' in q or "index only" in q or 'only' in q or "print only" in q: 
             print_index(toc)
-            time.sleep(30)
+            time.sleep(15)
         elif "speak" in q or "2" in q or 'two' in q: 
             print_n_speak_index(toc)
             time.sleep(10)
@@ -67,13 +69,13 @@ def pdf_read():
         4. Read/speak a whole book
         """  
         
-        time.sleep(30)
+        #time.sleep(5)
   
         print("____________________________________________________________________________________________________________")
         print("1. Print/speak a single page\n2. Print/speak a range of pages\n3. Print/speak a Lesson\n4. Read/speak a whole book")
         speak("1. Print/speak a single page\n2. Print/speak a range of pages\n3. Print/speak a Lesson\n4. Read/speak a whole book")
         q = hear().lower()
-        if "single" in q:
+        if "single" in q or "one" in q or "vone" in q or "one page" in q or "vone page" in q or "1 page" in q:
             try:
                 pgno = int(input("Page Number - "))
 
@@ -206,4 +208,4 @@ def search_in_toc(toc, key, totalpg):
     return None,None
 
 #ms_word()
-#pdf_read()
+pdf_read()
