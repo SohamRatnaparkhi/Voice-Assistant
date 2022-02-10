@@ -1,5 +1,3 @@
-from filelock import Timeout
-from matplotlib.cbook import index_of
 from speakListen import hear
 from speakListen import speak
 import textract

@@ -4,8 +4,8 @@ from rich.table import Table
 def print_menu():
     table = Table(title="\nI can do the following :- ")
 
-    table.add_column("S. No.", style="cyan", no_wrap=True)
-    table.add_column("Task", style="magenta")
+    table.add_column("Sr. No.", style="cyan", no_wrap=True)
+    table.add_column("Task", style="yellow")
     table.add_column("Command", justify="left", style="green")
 
     table.add_row("1", "Speak Text entered by User", "Speak out the following text")
