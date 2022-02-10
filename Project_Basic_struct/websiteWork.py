@@ -14,7 +14,7 @@ def google_search():
     """[Goes to google and searches the website asked by the user]
     """
     google_search_link = "https://www.google.co.in/search?q="
-    google_search = "What do you want me to search on Google? Please tell me the exact sentence or word to Search."
+    google_search = "What do you want me to search on Google? "
     print(google_search)
     speak(google_search)
     
@@ -48,7 +48,7 @@ def wiki_search():
                 print(wiki_search_link + query)
                 webbrowser.open(wiki_search_link + query)
     except Exception as e:
-        pass
+        print("Couldn't find")
 
 #wiki_search()
 google_search()
