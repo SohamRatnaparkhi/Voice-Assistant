@@ -38,12 +38,12 @@ def pdf_read():
                 4. Title  """   
 
         author =  details["author"]
+        print("Author : ",author)
         speak(f" Author {author}")
         title = details["title"]
+        print("Title : ",title) 
         speak(f" Title {title}")    
         #print(details)
-        print("Author : ",author)
-        print("Title : ",title) 
         print("Total Pages : ",total_pages)
 
         # TODO : Deal with the Index

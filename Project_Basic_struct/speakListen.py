@@ -1,6 +1,5 @@
 import time
-from turtle import delay
-from anyio import sleep
+from colorama import Fore, Back, Style
 import speech_recognition as sr
 '''from gtts import gTTS
 from playsound import playsound
@@ -9,6 +8,7 @@ from win32com import client'''
 import os
 import pyttsx3
 import datetime
+from rich.progress import Progress
 
 
 python = pyttsx3.init("sapi5")
@@ -59,29 +59,37 @@ def hear():
 
     with sr.Microphone() as source:
         # read the audio data from the default microphone
-        print("Listening...")
+        print(Fore.RED + "\nListening...")
         #time.sleep(0.5)
 
         speech = r.record(source, duration = 9)  # option 
         #speech = r.listen(source)
         # convert speech to text
         try:
-            print("Recognizing...")
+            #print("Recognizing...")
+            recognizing()
             speech = r.recognize_google(speech)
-            print(speech)
+            print(speech + "\n")
         
         except Exception as exception:
             print(exception)
             return "None"
     return speech
 
+def recognizing():
+    with Progress() as pr:
+        rec = pr.add_task("[red]Recognizing...", total = 100)
+        while not pr.finished:
+            pr.update(rec, advance = 1.0)
+            time.sleep(0.01)
 
 if __name__ == '__main__':
-    print("Enter your name")
-    name = hear()
-    speak("Hello " + name)
-    greet("s")
-    greet("e")
+    # print("Enter your name")
+    # name = hear()
+    # speak("Hello " + name)
+    # greet("s")
+    # greet("e")
     pass
     #hear()
+    #recognizing()
     
