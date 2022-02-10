@@ -62,7 +62,7 @@ def hear():
         print("Listening...")
         #time.sleep(0.5)
 
-        speech = r.record(source, duration = 5)  # option 
+        speech = r.record(source, duration = 9)  # option 
         #speech = r.listen(source)
         # convert speech to text
         try:
