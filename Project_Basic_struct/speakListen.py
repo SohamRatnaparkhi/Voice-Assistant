@@ -83,6 +83,40 @@ def recognizing():
             pr.update(rec, advance = 1.0)
             time.sleep(0.01)
 
+def long_hear(duration_time = 60):
+    """[It will process the speech of user using Google_Speech_Recognizer(recognize_google)]
+        the difference between the hear() and long_hear() is that - the
+        hear() - records users voice for 9 seconds
+        long_hear - will record user's voice for the time specified by user. By default, it records for 60 seconds.
+    Returns:
+        [str]: [Speech of user as a string in English(en - IN)]
+    """    
+    r = sr.Recognizer()
+    """Reconizer is a class which has lot of functions related to Speech i/p and o/p.
+    """
+    r.pause_threshold = 1 # a pause of more than 1 second will stop the microphone temporarily
+    r.energy_threshold = 300 # python by default sets it to 300. It is the minimum input energy to be considered. 
+    r.dynamic_energy_threshold = True # pyhton now can dynamically change the threshold energy
+
+    with sr.Microphone() as source:
+        # read the audio data from the default microphone
+        print(Fore.RED + "\nListening...")
+        #time.sleep(0.5)
+
+        speech = r.record(source, duration = duration_time)  # option 
+        #speech = r.listen(source)
+        # convert speech to text
+        try:
+            print(Fore.RED +"Recognizing...")
+            #recognizing()
+            speech = r.recognize_google(speech)
+            #print(speech + "\n")
+        
+        except Exception as exception:
+            print(exception)
+            return "None"
+    return speech
+
 if __name__ == '__main__':
     # print("Enter your name")
     # name = hear()
