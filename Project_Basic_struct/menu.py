@@ -1,8 +1,10 @@
 from rich.console import Console # pip3 install Rich
 from rich.table import Table
+from speakListen import *
 
 
 def print_menu():
+    speak("I can do the following")
     table = Table(title="\nI can do the following :- ", show_lines = True) 
 
     table.add_column("Sr. No.", style="cyan", no_wrap=True)
@@ -15,8 +17,9 @@ def print_menu():
     table.add_row("4", "Read a MS Word(docx) document", "Read MS Word document")
     table.add_row("5", "Read a PDF document", "Read PDF document")
     table.add_row("6", "Read a book(PDF)", "Read a book ")
+    table.add_row("7", "Quit the program", "Python close")
 
     console = Console()
     console.print(table)
 
-print_menu()
+#print_menu()

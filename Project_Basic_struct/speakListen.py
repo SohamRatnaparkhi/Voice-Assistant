@@ -41,7 +41,7 @@ def greet(g):
         speak(text)    
     
     elif g == "quit" or g == "end" or g == "over" or g == "e":
-        text = 'Thank you!Sir. Good Bye ! '
+        text = 'Thank you!. Good Bye ! '
         speak(text)
 
 def hear():

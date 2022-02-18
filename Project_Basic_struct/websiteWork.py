@@ -50,8 +50,13 @@ def wiki_search():
             if "yes" in q or "okay" in q or "ok" in q or "opun" in q or "opan" in q or "vopen" in q or "es" in q or "s" in q:
                 print(wiki_search_link + query)
                 webbrowser.open(wiki_search_link + query)
+
+            elif query == "None":
+                print("I could'nt understand what you just said!")
+                speak("I could'nt understand what you just said!")
+
     except Exception as e:
         print("Couldn't find")
 
 #wiki_search()
-google_search()
+#google_search()

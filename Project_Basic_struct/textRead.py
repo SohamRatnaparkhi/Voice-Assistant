@@ -234,5 +234,5 @@ def book_details(author, title, total_pages):
     console.print(table)
    
 #ms_word()
-pdf_read()
+#pdf_read()
 #book_details("abc", "abcde", 12)
