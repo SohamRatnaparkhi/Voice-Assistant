@@ -43,5 +43,5 @@ def colours():
     print(Fore.LIGHTCYAN_EX + text)
     print(Fore.LIGHTWHITE_EX + text)
 
-big_text()
-#colours()
+#big_text()
+colours()
