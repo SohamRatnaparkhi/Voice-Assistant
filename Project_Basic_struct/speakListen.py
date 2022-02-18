@@ -11,7 +11,7 @@ import datetime
 from rich.progress import Progress
 
 
-python = pyttsx3.init("sapi5")
+python = pyttsx3.init("sapi5") # name of the engine is set as Python
 voices = python.getProperty("voices")
 #print(voices)
 python.setProperty("voice", voices[1].id)
@@ -113,7 +113,7 @@ def long_hear(duration_time = 60):
             #print(speech + "\n")
         
         except Exception as exception:
-            print(exception)
+            print(exception)            
             return "None"
     return speech
 

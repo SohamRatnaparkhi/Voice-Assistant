@@ -22,6 +22,9 @@ def google_search():
 
     if query != "None":
         webbrowser.open(google_search_link+query)
+    elif query == "None":
+        print("I could'nt understand what you just said!")
+        speak("I could'nt understand what you just said!")
 
 def wiki_search():
     """[Speak out the summary in wikipedia and going to the website according to user's choice.]

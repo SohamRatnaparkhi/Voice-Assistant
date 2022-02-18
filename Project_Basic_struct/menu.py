@@ -1,8 +1,9 @@
 from rich.console import Console # pip3 install Rich
 from rich.table import Table
 
+
 def print_menu():
-    table = Table(title="\nI can do the following :- ")
+    table = Table(title="\nI can do the following :- ", show_lines = True) 
 
     table.add_column("Sr. No.", style="cyan", no_wrap=True)
     table.add_column("Task", style="yellow")
