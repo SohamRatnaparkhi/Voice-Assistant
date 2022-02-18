@@ -12,8 +12,11 @@ def ms_word():
     """[Print and speak out a ms_word docx file as specified in the path]
     """    
     # TODO : Take location input from the user
-    file_loc = doubleslash("D:\College\Air Pollution.docx") 
-
+    speak("Enter the document's location - ")
+    location = input("Enter the document's location - ")
+    
+    file_loc = doubleslash(location) 
+    #"D:\College\Air Pollution.docx"
     doc = docx.Document(file_loc)
     fullText = []
     for para in doc.paragraphs:
@@ -26,8 +29,10 @@ def ms_word():
 def pdf_read():
     """[Print and speak out the pdf on specified path]
     """    
-
-    path = doubleslash("D:\Books\\Friends.pdf")
+    speak("Enter the document's location - ")
+    location = input("Enter the document's location - ")
+    
+    path = doubleslash(location) #"D:\Books\\Friends.pdf"
     pdf = fitz.open(path)
     details = pdf.metadata
     total_pages = pdf.pageCount # Stores the total number of pages

@@ -15,7 +15,7 @@ def print_menu():
     table.add_row("2", "Search anything on Google", "Search on Google")
     table.add_row("3", "Search anything on Wikipedia", "Search on Wikipedia")
     table.add_row("4", "Read a MS Word(docx) document", "Read MS Word document")
-    table.add_row("5", "Read a PDF document", "Read PDF document")
+    table.add_row("5", "Convert speech to text", "Convert speech to text")
     table.add_row("6", "Read a book(PDF)", "Read a book ")
     table.add_row("7", "Quit the program", "Python close")
 
