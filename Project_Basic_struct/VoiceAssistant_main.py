@@ -17,7 +17,7 @@ def main():
     while True:
         # print("Say \"Python\" to activate the Voice Assistant!")
 
-        q = hear().lower()
+        q = short_hear().lower()
         if "close" in q:
             greet("end")
             exit(0)
@@ -33,18 +33,24 @@ def main():
                     return 0
                 elif "search on google" in query or "search google" in query or "google" in query:
                     google_search()
-                    break
+                    print_menu()
+                    #break
                 elif "search on wikipedia" in query or "search wikipedia" in query or "wikipedia" in query:
                     wiki_search()
-                    break
+                    print_menu()
+                    #break
                 elif "word" in query:
                     ms_word()
-                    break
+                    print_menu()
+                    #break
                 elif "book" in query:
                     pdf_read()
-                    break
+                    print_menu()
+                    #break
                 elif "speech to text" in query:
                     big_text()
+                    print_menu()
+                    #break
 
         elif "close" in q:
             return 0
