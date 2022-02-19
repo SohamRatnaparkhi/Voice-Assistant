@@ -31,26 +31,39 @@ def main():
                     greet("end")
                     end += 1
                     return 0
+                elif "text to speech" in query:
+                    tts()
+                    time.sleep(4)
+                    print_menu()
+
                 elif "search on google" in query or "search google" in query or "google" in query:
                     google_search()
+                    time.sleep(10)
                     print_menu()
                     #break
                 elif "search on wikipedia" in query or "search wikipedia" in query or "wikipedia" in query:
                     wiki_search()
+                    time.sleep(10)
                     print_menu()
                     #break
                 elif "word" in query:
                     ms_word()
+                    time.sleep(5)
                     print_menu()
                     #break
                 elif "book" in query:
                     pdf_read()
+                    time.sleep(10)
                     print_menu()
                     #break
                 elif "speech to text" in query:
                     big_text()
+                    time.sleep(5)
                     print_menu()
                     #break
+                #time.sleep(10)
+                else:
+                    print("I could'nt understand what you just said!")
 
         elif "close" in q:
             return 0

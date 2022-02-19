@@ -11,7 +11,7 @@ def print_menu():
     table.add_column("Task", style="yellow")
     table.add_column("Command", justify="left", style="green")
 
-    table.add_row("1", "Speak Text entered by User", "Speak out the following text")
+    table.add_row("1", "Speak Text entered by User", "text to speech")
     table.add_row("2", "Search anything on Google", "Search on Google")
     table.add_row("3", "Search anything on Wikipedia", "Search on Wikipedia")
     table.add_row("4", "Read a MS Word(docx) document", "Read MS Word document")

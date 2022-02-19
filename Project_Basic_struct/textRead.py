@@ -7,35 +7,46 @@ import fitz
 import time
 from rich.console import Console # pip3 install Rich
 from rich.table import Table
+from colorama import Fore
 
 def ms_word():
     """[Print and speak out a ms_word docx file as specified in the path]
     """    
     # TODO : Take location input from the user
-    speak("Enter the document's location - ")
-    location = input("Enter the document's location - ")
-    
-    file_loc = doubleslash(location) 
-    #"D:\College\Air Pollution.docx"
-    doc = docx.Document(file_loc)
-    fullText = []
-    for para in doc.paragraphs:
-        fullText.append(para.text)
-    #print(fullText)
-    doc_file = '\n'.join(fullText)
-    print(doc_file)
-    speak(doc_file)
+    try:
+        speak("Enter the document's location - ")
+        location = input("Enter the document's location - ")
+        
+        file_loc = doubleslash(location) 
+        #"D:\College\Air Pollution.docx"
+        doc = docx.Document(file_loc)
+        fullText = []
+        for para in doc.paragraphs:
+            fullText.append(para.text)
+        #print(fullText)
+        doc_file = '\n'.join(fullText)
+        print(doc_file)
+        speak(doc_file)
+    except Exception as exp:
+        print(exp)
+        return "None"
 
 def pdf_read():
     """[Print and speak out the pdf on specified path]
     """    
-    speak("Enter the document's location - ")
-    location = input("Enter the document's location - ")
-    
-    path = doubleslash(location) #"D:\Books\\Friends.pdf"
-    pdf = fitz.open(path)
-    details = pdf.metadata
-    total_pages = pdf.pageCount # Stores the total number of pages
+    try:
+        speak("Enter the document's location - ")
+        location = input("Enter the document's location - ")
+        
+        path = doubleslash(location) #"D:\Books\\Friends.pdf"
+        pdf = fitz.open(path)
+        details = pdf.metadata
+        total_pages = pdf.pageCount # Stores the total number of pages
+
+    except Exception as exp:
+        print(f"ERROR - {exp}")
+        print(Fore.YELLOW + "I could'nt locate the file!\nIf you didn't specify the extension of the file, please specify it.")
+        return "None"
     try :
         """     1. Author
                 2. Creator
@@ -178,7 +189,7 @@ def pdf_read():
             speak("I could'nt understand what you just said!")
         else:
             print("You didn't say a valid command!")
-
+            time.sleep(5)
     except Exception as e: 
         print(e)
     pass
