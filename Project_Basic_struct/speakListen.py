@@ -1,10 +1,6 @@
 import time
 from colorama import Fore, Back, Style
 import speech_recognition as sr
-'''from gtts import gTTS
-from playsound import playsound
-import win32com
-from win32com import client'''
 import os
 import pyttsx3
 import datetime
@@ -28,6 +24,12 @@ def speak(text):
     python.runAndWait()
 
 def greet(g):
+    """Uses the datetime library to generate current time and then greets accordingly.
+    
+
+    Args:
+        g (str): To decide whether to say hello or good bye
+    """
     if g == "start" or g == "s":
         h = datetime.datetime.now().hour
         text = ''
@@ -77,6 +79,8 @@ def hear():
     return speech
 
 def recognizing():
+    """Uses the Rich library to print a simulates version of "recognizing" by printing a loading bar.
+    """
     with Progress() as pr:
         rec = pr.add_task("[red]Recognizing...", total = 100)
         while not pr.finished:
@@ -87,7 +91,7 @@ def long_hear(duration_time = 60):
     """[It will process the speech of user using Google_Speech_Recognizer(recognize_google)]
         the difference between the hear() and long_hear() is that - the
         hear() - records users voice for 9 seconds
-        long_hear - will record user's voice for the time specified by user. By default, it records for 60 seconds.
+        long_hear() - will record user's voice for the time specified by user. By default, it records for 60 seconds.
     Returns:
         [str]: [Speech of user as a string in English(en - IN)]
     """    

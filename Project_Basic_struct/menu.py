@@ -4,6 +4,8 @@ from speakListen import *
 
 
 def print_menu():
+    """Display a table with list of tasks and their associated commands.
+    """
     speak("I can do the following")
     table = Table(title="\nI can do the following :- ", show_lines = True) 
 

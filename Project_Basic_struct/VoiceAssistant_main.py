@@ -64,8 +64,9 @@ def main():
                 #time.sleep(10)
                 else:
                     print("I could'nt understand what you just said!")
+                    speak("I could'nt understand what you just said!")
                 
-                print("Do you want to continue? if yes then say " + Fore.YELLOW + "\"YES\"" + Fore.WHITE + "else say" + Fore.YELLOW + "\"CLOSE PYTHON\"")
+                print("\nDo you want to continue? if yes then say " + Fore.YELLOW + "\"YES\"" + Fore.WHITE + " else say " + Fore.YELLOW + "\"CLOSE PYTHON\"")
                 speak("Do you want to continue? if yes then say YES else say CLOSE PYTHON")
                 qry = hear().lower()
                 if "yes" in qry:

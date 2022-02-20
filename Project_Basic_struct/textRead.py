@@ -28,7 +28,9 @@ def ms_word():
         print(doc_file)
         speak(doc_file)
     except Exception as exp:
-        print(exp)
+        #print(exp)
+        print(f"ERROR - {exp}")
+        print(Fore.YELLOW + "I could'nt locate the file!\nIf you didn't specify the extension of the file, please specify it.")
         return "None"
 
 def pdf_read():
@@ -62,9 +64,10 @@ def pdf_read():
         #print(details)
         #print("Total Pages : ",total_pages)
         book_details(author, title, total_pages)
-        speak(f" Author {author}")
         speak(f" Title {title}")
-
+        speak(f" Author {author}")
+        speak(f" Total Pages {total_pages}")
+        
         # TODO : Deal with the Index
         toc = pdf.get_toc()
         print("Say 1 or \"ONLY PRINT INDEX\" - if you want me to print the book's index.\nSay 2 if you want me to print and make me speak out the book's index.\nSay any key if you don't want to print the index.'")
@@ -141,8 +144,10 @@ def pdf_read():
         elif 'lesson' in q:
             try:
                 key = input("Lesson name - ")
-                start_pg_no, end_pg_no = map(int,search_in_toc(toc, key, total_pages))
+                start_pg_no, end_pg_no = search_in_toc(toc, key, total_pages)
                 if start_pg_no != None and end_pg_no != None:
+                    start_pg_no, end_pg_no = map(int,search_in_toc(toc, key, total_pages))
+                
                     for i in range(start_pg_no - 1, end_pg_no):
                         page = pdf.load_page(i)
                         text = page.get_text('text')
@@ -162,12 +167,14 @@ def pdf_read():
                             speak(text.replace('\t',' '))
                     
             except Exception:
-                print("Try Again.")
-                speak("Try Again.")
+                print("Try Again! Lesson could not be found.")
+                speak("Try Again.Lesson could not be found")
                 speak("Lesson name")
                 key = input("Lesson name - ")
-                start_pg_no, end_pg_no = map(int,search_in_toc(toc, key, total_pages))
+                start_pg_no, end_pg_no = search_in_toc(toc, key, total_pages)
                 if start_pg_no != None and end_pg_no != None:
+                    start_pg_no, end_pg_no = map(int,search_in_toc(toc, key, total_pages))
+                
                     for i in range(start_pg_no - 1, end_pg_no):
                         page = pdf.load_page(i)
                         text = page.get_text('text')
@@ -196,9 +203,23 @@ def pdf_read():
     pdf.close()
 
 def doubleslash(text):
+    """Replaces / with // 
+
+    Args:
+        text (str): location
+
+    Returns:
+        str: formatted location
+    """
     return text.replace('\\' , '\\\\')
 
 def print_index(toc):
+    """Prints out the index in proper format with title name and page number
+
+    Args:
+        toc (nested list): toc[1] - Topic name
+                           toc[2] - Page number
+    """
     dash = "-"*(100 - 7)
     space = " "*47
     print(f"{space}INDEX")
@@ -208,6 +229,12 @@ def print_index(toc):
         print(f"{topic[1]} {eq_dash} {topic[2]}")
         
 def print_n_speak_index(toc):
+    """Along with printing, it speaks out the index too.
+
+    Args:
+        toc (nested list): toc[1] - Topic name
+                           toc[2] - Page number
+    """
     dash = "-"*(100 - 7)
     space = " "*47
     print(f"{space}INDEX")
@@ -218,6 +245,18 @@ def print_n_speak_index(toc):
         speak(f"{topic[1]}  {topic[2]}")
 
 def search_in_toc(toc, key, totalpg):
+    """Searches a particular lesson name provided as a parameter in toc and returns its starting and ending page numbers.
+
+    Args:
+        toc (nested list): toc[1] - Topic name
+                           toc[2] - Page number
+        key (str): the key to be found
+        totalpg (int): total pages in book/document
+
+    Returns:
+        int: staring and ending page numbers of lesson found.
+        If not found then return None
+    """
     for i in range(len(toc) - 1):
         topic = toc[i]
         if i != len(toc) - 2:
@@ -236,6 +275,13 @@ def search_in_toc(toc, key, totalpg):
     return None,None
 
 def book_details(author, title, total_pages):
+    """Creates a table of book details like author name, title, and total pages.
+
+    Args:
+        author (str): Name of author
+        title (str): title of the book
+        total_pages (int): total pages in the book
+    """
     table = Table(title="\nBook Details :- ", show_lines = True) 
 
     table.add_column("Sr. No.", style="magenta", no_wrap=True)
