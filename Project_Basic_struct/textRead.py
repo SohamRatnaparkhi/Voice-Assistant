@@ -1,8 +1,6 @@
 from speakListen import hear
 from speakListen import speak
-import textract
 import docx
-import PyPDF2 as p
 import fitz
 import time
 from rich.console import Console # pip3 install Rich
