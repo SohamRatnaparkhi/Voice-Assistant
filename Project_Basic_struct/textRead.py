@@ -16,7 +16,7 @@ def ms_word():
         location = input("Enter the document's location - ")
         
         file_loc = doubleslash(location) 
-        #"D:\College\Air Pollution.docx"
+        #D:\Books\Soham ratnaparkhi.docx
         doc = docx.Document(file_loc)
         fullText = []
         for para in doc.paragraphs:
