@@ -37,7 +37,7 @@ def greet(g):
             text = "Hello ! Good Afternoon  "
         elif h < 12 and h > 0:
             text = "Hello! Good Morning  "
-        elif h > 17 :
+        elif h >= 17 :
             text = "Hello! Good Evening "
         text += " I am Python, How may i help you ?"
         speak(text)    

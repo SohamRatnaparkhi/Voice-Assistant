@@ -33,7 +33,7 @@ def main():
                 elif "text to speech" in query:
                     tts()
                     time.sleep(4)
-                    #print_menu()
+                    
 
                 elif "search on google" in query or "search google" in query or "google" in query:
                     google_search()
