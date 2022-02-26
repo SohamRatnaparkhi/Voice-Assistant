@@ -84,4 +84,4 @@ In-case, if you don't find _1_VoiceAssistant in Voice Assistant folder, just ins
 ![VA Methodolgy](https://user-images.githubusercontent.com/92905626/155858712-c0274bc3-03c7-47de-bb7f-c4a2989144c6.JPG)
 
 
-                                                               THANK YOU!
+                                                    THANK YOU!
