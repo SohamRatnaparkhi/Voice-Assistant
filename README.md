@@ -23,7 +23,7 @@ This is Voice Assistant coded using Python which can do the following: -
 - [Installation](#installation)
 - [How To Use](#how-to-use)
 - [Description of Commands](#description-of-commands)
-- [Tech](#tech)
+- [Tech used](#tech-used)
 - [Methodolgy](#methodolgy)
 
 ## Installation
