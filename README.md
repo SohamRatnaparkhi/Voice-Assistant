@@ -37,8 +37,8 @@ Download the rar file.
 In-case, if you don't find _1_VoiceAssistant in Voice Assistant folder, just install the executable(.exe) file AND SAVE IT IN VoiceAssistant FOLDER. It is advisable to run the (.exe) file in the VoiceAssistant folder; else the file won't run.
 ## How To Use
 - Saying "Hello Python" will activate the Voice Assistant.
-- Then the table that will be displayed on screen shows the tasks that Voice Assistant can do.
-- Saying the respective commands of task that is intended will enable the Voice Assistant to do those tasks.
+- Then the table that will be displayed on the screen shows the tasks that Voice Assistant can do.
+- Saying the respective commands of the task that is intended will enable the Voice Assistant to do those tasks.
 ## Screenshots
 
 ![Voice Assistant](https://user-images.githubusercontent.com/92905626/155857729-58a7751a-cb63-48ee-9df5-3a4ee4129a25.JPG)
