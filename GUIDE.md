@@ -4,7 +4,8 @@
 
 1. All the pre-requisites should be complete to run the Voice Assistant in the terminal window.
 1. Create a GitHub account if not created already.
-1. The source code can be downloaded using the following link: - <https://github.com/SohamRatnaparkhi/Voice-Assistant/tree/master/Project_Basic_struct>
+2. The code is present in the file *Project_Basic_struct*
+3. The source code can be downloaded using the following link: - <https://github.com/SohamRatnaparkhi/Voice-Assistant/tree/master/Project_Basic_struct>
 
 This source code should be cloned using the git commands.
 
