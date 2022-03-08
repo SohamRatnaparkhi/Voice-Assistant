@@ -9,7 +9,7 @@ Following are the pre-requisites to be installed in the system to use Voice Assi
    1. pip install (library/package\_name)       or
    1. pip3 install (library/package\_name)   
 
-## *Enter the following commands*: -
+## *Enter the following commands to install them*: -
 
 [pip install colorama](https://pypi.org/project/colorama/)
 
