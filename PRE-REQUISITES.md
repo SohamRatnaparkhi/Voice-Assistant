@@ -37,4 +37,4 @@ Following are the pre-requisites to be installed in the system to use Voice Assi
 
 ## To download the source code and executable file. - [link](https://github.com/SohamRatnaparkhi/Voice-Assistant/releases/tag/v1.0.0)
 
-To use the Voice Assistant through an executable file; download according to instructions mentioned in the [README](https://github.com/SohamRatnaparkhi/Voice-Assistant).
+To use the Voice Assistant through an executable file; download according to instructions mentioned in the installation part of [README](https://github.com/SohamRatnaparkhi/Voice-Assistant).
