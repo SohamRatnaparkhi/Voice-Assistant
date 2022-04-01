@@ -1,5 +1,8 @@
 # *GUIDE*
 
+<br>
+You can run this voice assistant through an .exe file as well as through the terminal. When using it as an .exe file, be sure to keep the .exe file in its setup.
+
  <h3>a) For using Voice Assistant through TERMINAL WINDOW</h3>
 
 1. All the pre-requisites should be complete to run the Voice Assistant in the terminal window.
@@ -11,10 +14,8 @@ This source code should be cloned using the git commands.
 
 For more information about cloning a GitHub repository, go to the following link - <https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository>
 
-1. Run the file VoiceAssistant\_main.py in the terminal using the command:-
-
-  *python VoiceAssistant\_main.py*
-
+<br>After cloning the project, to use this project do the following :- <br>
+$ Run the file VoiceAssistant\_main.py in the terminal using the command:-  <b>      python VoiceAssistant\_main.py</b> <br>
 1. For more details about running a python code follow the link: -
 1. For Windows - <https://docs.python.org/3/faq/windows.html>
 1. For Linux - <https://www.educative.io/edpresso/how-to-run-a-python-script-in-linux>
@@ -37,5 +38,6 @@ In case, if you don't find \_1\_VoiceAssistant in the Voice Assistant folder, ju
 - Saying "Hello Python" will activate the Voice Assistant.
 - Then the table that will be displayed on the screen shows the tasks that Voice Assistant can do.
 - Saying the respective commands of the task that is intended will enable the Voice Assistant to do those tasks.
+- The README.md file of this repository has more information about the individual commands.
 
 ![Voice Assistant](https://user-images.githubusercontent.com/92905626/155857729-58a7751a-cb63-48ee-9df5-3a4ee4129a25.JPG)
