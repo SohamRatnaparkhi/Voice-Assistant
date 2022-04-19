@@ -16,7 +16,7 @@ def ms_word():
         location = input("Enter the document's location - ")
         
         file_loc = doubleslash(location) 
-        #D:\Books\Soham ratnaparkhi.docx
+       
         doc = docx.Document(file_loc)
         fullText = []
         for para in doc.paragraphs:
@@ -38,9 +38,9 @@ def pdf_read():
         speak("Enter the document's location - ")
         location = input("Enter the document's location - ")
         
-        path = doubleslash(location) #"D:\Books\\Friends.pdf"
+        path = doubleslash(location) 
         pdf = fitz.open(path)
-        details = pdf.metadata
+        details = pdf.metadata # Stores the meta-data which generally includes Author name and Title of book/document.
         total_pages = pdf.pageCount # Stores the total number of pages
 
     except Exception as exp:
