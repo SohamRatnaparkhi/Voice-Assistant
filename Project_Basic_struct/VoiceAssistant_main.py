@@ -14,8 +14,7 @@ def main():
         print("\nSay \"Hello Python\" to activate the Voice Assistant!")
         start += 1
     while True:
-        # print("Say \"HEllo Python\" to activate the Voice Assistant!")
-
+        
         q = short_hear().lower()
         if "close" in q:
             greet("end")
