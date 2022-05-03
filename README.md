@@ -6,14 +6,14 @@
 <br>
 ![VA](https://user-images.githubusercontent.com/92905626/155858792-9a217c3c-09dd-45ba-a952-f5799c0219d3.jpeg)
 
-This is Voice Assistant coded using Python which can do the following: -
-
-    1. Speak Text entered by User.
-    2. Search anything on Google.
-    3. Search anything on Wikipedia.
-    4. Read a MS Word(docx) document.
-    5. Convert speech to text.
-    6. Read a book(PDF).
+This Voice Assistant has been coded using Python. It can do the following: -
+   
+- Speak Text entered by User.
+- Search anything on Google.
+- Search anything on Wikipedia.
+- Read an MS Word(docx) document.
+- Read a book(PDF). This feature makes the voice assistant an audio-book maker
+- It can be used as a Dictator to convert speech to text.
     
     
 
