@@ -1,17 +1,11 @@
 from speakListen import greet, hear
 from speakListen import speak
-
-
-""" 1. speakListen.speak(text)
-    2. speakListen.greet()
-    3. speakListen.hear()
-"""
 import wikipedia
 import webbrowser
 
 
 def google_search():
-    """[Goes to google and searches the website asked by the user]
+    """Opens google in the default browser and searches the website asked by the user
     """
     google_search_link = "https://www.google.co.in/search?q="
     google_search = "What do you want me to search on Google? "
