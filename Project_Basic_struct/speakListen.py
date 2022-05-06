@@ -15,25 +15,24 @@ python.setProperty("rate", 140)
 
 
 def speak(text):
-    """[This function would speak aloud some text provided as parameter]
-
+    """This function would speak aloud some text provided as parameter
+    
     Args:
-        text ([str]): [It is the speech to be spoken]
+        text ([str]): It is the speech to be spoken
     """    
     python.say(text)
     python.runAndWait()
 
 def greet(g):
-    """Uses the datetime library to generate current time and then greets accordingly.
+    """Uses the datetime library to generate current time and then greets accordingly. 
     
-
     Args:
         g (str): To decide whether to say hello or good bye
     """
     if g == "start" or g == "s":
         h = datetime.datetime.now().hour
         text = ''
-        if h > 12 and h < 17:
+        if h >= 12 and h < 17:
             text = "Hello ! Good Afternoon  "
         elif h < 12 and h > 0:
             text = "Hello! Good Morning  "
@@ -47,10 +46,10 @@ def greet(g):
         speak(text)
 
 def hear():
-    """[It will process the speech of user using Google_Speech_Recognizer(recognize_google)]
+    """It will process the speech of user using Google_Speech_Recognizer(recognize_google)
 
     Returns:
-        [str]: [Speech of user as a string in English(en - IN)]
+        [str]: Speech of user as a string in English(en - IN)
     """    
     r = sr.Recognizer()
     """Reconizer is a class which has lot of functions related to Speech i/p and o/p.
@@ -64,8 +63,10 @@ def hear():
         print(Fore.RED + "\nListening...")
         #time.sleep(0.5)
 
-        speech = r.record(source, duration = 9)  # option 
+        speech = r.record(source, duration = 9)  
+        # option 
         #speech = r.listen(source)
+        
         # convert speech to text
         try:
             #print("Recognizing...")
@@ -88,7 +89,7 @@ def recognizing():
             time.sleep(0.01)
 
 def long_hear(duration_time = 60):
-    """[It will process the speech of user using Google_Speech_Recognizer(recognize_google)]
+    """It will process the speech of user using Google_Speech_Recognizer(recognize_google)
         the difference between the hear() and long_hear() is that - the
         hear() - records users voice for 9 seconds
         long_hear() - will record user's voice for the time specified by user. By default, it records for 60 seconds.
@@ -107,7 +108,8 @@ def long_hear(duration_time = 60):
         print(Fore.RED + "\nListening...")
         #time.sleep(0.5)
 
-        speech = r.record(source, duration = duration_time)  # option 
+        speech = r.record(source, duration = duration_time)  
+        # option 
         #speech = r.listen(source)
         # convert speech to text
         try:
@@ -122,10 +124,10 @@ def long_hear(duration_time = 60):
     return speech
 
 def short_hear(duration_time = 5):
-    """[It will process the speech of user using Google_Speech_Recognizer(recognize_google)]
-        the difference between the hear() and long_hear() is that - the
+    """It will process the speech of user using Google_Speech_Recognizer(recognize_google)
+        the difference between the hear() and short_hear() is that - the
         hear() - records users voice for 9 seconds
-        long_hear - will record user's voice for the time specified by user. By default, it records for 60 seconds.
+        short_hear - will record user's voice for 5 seconds. 
     Returns:
         [str]: [Speech of user as a string in English(en - IN)]
     """    
