@@ -1,8 +1,8 @@
 
 # Voice Assistant
-📑Website - https://sohamratnaparkhi.github.io/VoiceAssistant/
+📑[Website](https://sohamratnaparkhi.github.io/VoiceAssistant/)
 <br>
-🎇Please open the <b>Project_Basic_struct</b> folder to view the code! <br>
+🎇Please open the <b>[Project_Basic_struct](https://github.com/SohamRatnaparkhi/Voice-Assistant/tree/master/Project_Basic_struct)</b> folder to view the code! <br>
 <br>
 ![VA](https://user-images.githubusercontent.com/92905626/155858792-9a217c3c-09dd-45ba-a952-f5799c0219d3.jpeg)
 
@@ -28,6 +28,7 @@ This Voice Assistant has been coded using Python. It can do the following: -
 - [How To Use](#how-to-use)
 - [Description of Commands](#description-of-commands)
 - [Tech used](#tech-used)
+- [Contributions](#contributions)
 - [Methodolgy](#methodolgy)
 
 ## Installation
@@ -81,16 +82,17 @@ In-case, if you don't find _1_VoiceAssistant in Voice Assistant folder, just ins
 
 **Language:** Python
 
-
+## Contributions 
+Follow guidelines mentioned in [CONTRIBUTING.md](https://github.com/SohamRatnaparkhi/Voice-Assistant/blob/master/CONTRIBUTING.md)
 
 
 ## Methodolgy
 ![VA Methodolgy](https://user-images.githubusercontent.com/92905626/155858712-c0274bc3-03c7-47de-bb7f-c4a2989144c6.JPG)
 
-For more information, follow the given links - <br> <br>
-     https://github.com/SohamRatnaparkhi/Voice-Assistant/blob/master/DOCUMENTATION.md <br>
-     https://github.com/SohamRatnaparkhi/Voice-Assistant/blob/master/GUIDE.md   <br>
-     https://github.com/SohamRatnaparkhi/Voice-Assistant/blob/master/PRE-REQUISITES.md <br>
+For more information, follow the given links- <BR>
+     [`DOCUMENTATION`](https://github.com/SohamRatnaparkhi/Voice-Assistant/blob/master/DOCUMENTATION.md) <br>
+     [`GUIDE`](https://github.com/SohamRatnaparkhi/Voice-Assistant/blob/master/GUIDE.md)   <br>
+     [`DEPENDANCIES`](https://github.com/SohamRatnaparkhi/Voice-Assistant/blob/master/PRE-REQUISITES.md)<br>
 
 
                                                     THANK YOU!
