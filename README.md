@@ -2,7 +2,7 @@
 # Voice Assistant
 📑[Website](https://sohamratnaparkhi.github.io/VoiceAssistant/)
 <br>
-🎇Please open the <b>[Project_Basic_struct](https://github.com/SohamRatnaparkhi/Voice-Assistant/tree/master/Project_Basic_struct)</b> folder to view the code! <br>
+🎇View code in the <b>[Project_Basic_struct](https://github.com/SohamRatnaparkhi/Voice-Assistant/tree/master/Project_Basic_struct)</b> <br>
 <br>
 ![VA](https://user-images.githubusercontent.com/92905626/155858792-9a217c3c-09dd-45ba-a952-f5799c0219d3.jpeg)
 
