@@ -1,7 +1,7 @@
-# *PRE-REQUISITES*
+# *REQUIREMENTS*
 
 Following are the pre-requisites to be installed in the system to use Voice Assistant through Terminal Window.
-
+You can individually download all the perticular requirements or simply write `pip install -r requirements.txt` followed by `pipwin install pyaudio`
 1. Python3 should be installed in the system.
 [Click to download](https://www.python.org/downloads/).
 
@@ -13,7 +13,7 @@ Following are the pre-requisites to be installed in the system to use Voice Assi
 
 [pip install colorama](https://pypi.org/project/colorama/)
 
-[](https://pypi.org/project/colorama/)[pip install rich](https://pypi.org/project/rich/)
+[pip install rich](https://pypi.org/project/rich/)
 
 [pip install pyttsx3](https://pypi.org/project/pyttsx3/)
 
